@@ -1,17 +1,19 @@
 import './App.css'
 import Experience from './components/Experience'
 import Navbar from './components/Navbar'
+import Marquee from './components/Marquee'
 function App() {
 
   return (
     <div>
     <Navbar />
+      <Marquee />
     <section id="about" className="h-screen flex items-center justify-center">
       <h1 className="text-5xl font-bold">About Me</h1>
     </section>
     <section id="experience" className="h-screen flex items-center justify-center">
       <h1 className="text-5xl font-bold">Experience</h1>
-      <Experience />
+      {/* <Experience /> */}
     </section>
     <section id="projects" className="h-screen flex items-center justify-center">
       <h1 className="text-5xl font-bold">Projects</h1>
