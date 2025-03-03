@@ -9,6 +9,8 @@ const Header = () => {
     <ThreeBackground />
     <h1>Luke Ichpekov</h1>
     <div className='mainContainer'>
+      <h1>Experience</h1>
+      <h1>Projects</h1>
     </div>
     </>
   );

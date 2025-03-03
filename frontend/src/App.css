@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Reenie+Beanie&display=swap');
+
 /* Reset styles */
 * {
   margin: 0;
@@ -9,6 +11,9 @@
 body {
   overflow: hidden; /* Prevents scrolling */
   height: 100vh;
+  font-family: 'Reenie Beanie';
+  font-size: 22px;
+
 }
 
 /* Ensure canvas fills the entire screen */
@@ -35,6 +40,10 @@ Canvas {
 
 
 h1 {
+  position: absolute;
+  top: 5vh;
+  left: 5vw;
   padding: 10px;
   color: white;
+  background: none;
 }
