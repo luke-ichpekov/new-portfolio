@@ -5,15 +5,15 @@ import * as THREE from 'three'
 const ParticleSystem = () => {
   const particlesRef = useRef<THREE.Points>(null!)
   const [particles] = useState(() => {
-    const particleCount = 5000
+    const particleCount = 10000
     const geometry = new THREE.BufferGeometry()
-    const positions = new Float32Array(particleCount * 3)
+    const positions = new Float32Array(particleCount * 8)
     
     // Randomly generate particle positions
     for (let i = 0; i < particleCount; i++) {
       positions[i * 3] = Math.random() * 10 - 5
       positions[i * 3 + 1] = Math.random() * 10 - 5
-      positions[i * 3 + 2] = Math.random() * 10 - 5
+      positions[i * 3 + 2] = Math.random() * 10 - 4
     }
     
     geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3))
@@ -23,7 +23,7 @@ const ParticleSystem = () => {
 
   const material = new THREE.PointsMaterial({
     color: 0x888888, // Particle color
-    size: 0.01, // Size of the particles (larger for spheres)
+    size: 0.001, // Size of the particles (larger for spheres)
     alphaTest: 0.5,
     transparent: true,
   })
@@ -33,8 +33,8 @@ const ParticleSystem = () => {
   
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
-      const x = (e.clientX / window.innerWidth) * 2 - 1 // Normalize to [-1, 1]
-      const y = -(e.clientY / window.innerHeight) * 2 + 1 // Normalize to [-1, 1]
+      const x = (e.clientX / window.innerWidth) * 1 - 1 // Normalize to [-1, 1]
+      const y = -(e.clientY / window.innerHeight) * 1 + 1 // Normalize to [-1, 1]
       setMouse({ x, y })
     }
     window.addEventListener('mousemove', handleMouseMove)
@@ -47,7 +47,7 @@ const ParticleSystem = () => {
     if (particlesRef.current) {
       // Apply parallax effect by adjusting the particle positions
       const positions = particlesRef.current.geometry.attributes.position.array
-      for (let i = 0; i < positions.length; i += 3) {
+      for (let i = 0; i < positions.length; i += 4) {
         // Make particles move based on mouse position
         positions[i] += (mouse.x * 0.01) // X-axis parallax effect
         positions[i + 1] += (mouse.y * 0.01) // Y-axis parallax effect
@@ -55,7 +55,7 @@ const ParticleSystem = () => {
 
       // Rotate the particles to animate them
       particlesRef.current.rotation.x += 0.001
-      particlesRef.current.rotation.y += 0.001
+      particlesRef.current.rotation.y += 0.002
 
       // Mark geometry as needing an update
       particlesRef.current.geometry.attributes.position.needsUpdate = true

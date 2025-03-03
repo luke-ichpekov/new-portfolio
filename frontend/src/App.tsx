@@ -5,9 +5,9 @@ import Marquee from './components/Marquee'
 import Header from './components/Header'
 function App() {
   return (
-    <div>
+    // <div>
     <Header />
-  </div>
+  // </div>
   )
 }
 

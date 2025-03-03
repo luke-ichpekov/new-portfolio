@@ -1,15 +1,40 @@
-/* styles.css */
-*{
+/* Reset styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   background-color: black;
 }
+
 body {
-  margin: 0;
-  overflow: hidden; /* Hide scrollbars */
-  height: 100vh; /* Full viewport height */
+  overflow: hidden; /* Prevents scrolling */
+  height: 100vh;
 }
 
-canvas {
-  display: block; /* Remove default margin and padding */
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
+/* Ensure canvas fills the entire screen */
+Canvas {
+  /* position: absolute; Ensures it stays in the background */
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1; /* Keeps it behind other elements */
+}
+
+.mainContainer{
+  position: absolute;
+  top: 5vh;
+  left: 5vw;
+  border: 2px solid rgb(73, 69, 69);
+  width: 90vw;
+  height: 90vh;
+  background-color: none;
+  background-image: none;
+  background: none;
+}
+
+
+h1 {
+  padding: 10px;
+  color: white;
 }
