@@ -1,0 +1,30 @@
+<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background circle with subtle gradient -->
+  <defs>
+    <linearGradient id="avatarGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1a1a1a" />
+      <stop offset="100%" stop-color="#2a2a2a" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Main circle -->
+  <circle cx="100" cy="100" r="100" fill="url(#avatarGradient)" />
+  
+  <!-- Ultra minimalist pixelated person -->
+  <!-- Head - single square -->
+  <rect x="85" y="50" width="30" height="30" fill="#444" />
+  
+  <!-- Body - single rectangle -->
+  <rect x="85" y="85" width="30" height="45" fill="#333" />
+  
+  <!-- Arms - horizontal line -->
+  <rect x="65" y="95" width="70" height="10" fill="#3a3a3a" />
+  
+  <!-- Legs - two rectangles -->
+  <rect x="85" y="130" width="10" height="30" fill="#444" />
+  <rect x="105" y="130" width="10" height="30" fill="#444" />
+  
+  <!-- Minimal face - just two dots for eyes -->
+  <rect x="92" y="62" width="4" height="4" fill="#222" />
+  <rect x="104" y="62" width="4" height="4" fill="#222" />
+</svg> 
