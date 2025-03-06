@@ -1,14 +1,22 @@
+import { useState } from 'react'
 import './App.css'
-import Experience from './components/Experience'
-import Navbar from './components/Navbar'
-import Marquee from './components/Marquee'
 import Header from './components/Header'
+import ModeSwitcher from './components/ModeSwitcher'
+
 function App() {
+  const [mode, setMode] = useState('dark');
+
+  const handleModeChange = (newMode: string) => {
+    setMode(newMode);
+    document.documentElement.setAttribute('data-theme', newMode);
+  };
+
   return (
-    // <div>
-    <Header />
-  // </div>
-  )
+    <>
+      <ModeSwitcher mode={mode} onModeChange={handleModeChange} />
+      <Header mode={mode} />
+    </>
+  );
 }
 
 export default App
