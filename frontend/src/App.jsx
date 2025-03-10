@@ -3,7 +3,9 @@ import './App.css';
 import { Box } from "@chakra-ui/react"
 import About from './components/About';
 import Header from './components/Header';
+
 import { HStack, Stack, VStack } from "@chakra-ui/react"
+import WorkExperience from "./components/WorkExperience";
 function App() {  
   return (
     <Provider>
@@ -12,6 +14,7 @@ function App() {
           <Stack gap={"10"}>
             <Header/>
             <About/>
+            <WorkExperience />
           </Stack>
         </Box>
       </Box>
